@@ -1,0 +1,15 @@
+.display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.icons{
+    background-color: var(--color-primary);
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 14px;
+    color: #FFFFFF;
+    padding: 0.125rem;
+    border-radius: 2px;
+}

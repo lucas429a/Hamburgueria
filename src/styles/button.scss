@@ -1,0 +1,33 @@
+.button__1{
+    width: 8.125rem;
+    height: 3.75rem;
+    border-radius: 0.5rem;
+    padding: 0px 20px;
+    gap: 10px;
+    background-color: #BDBDBD;
+    color: #FFFFFF;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.button__2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6.25rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    padding: 0px 20px;
+    gap: 10px;
+    background-color: #BDBDBD;
+    color: #FFFFFF;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+
+.button__1,.button__2:hover{
+    background-color: #27AE60;
+}

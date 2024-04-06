@@ -1,0 +1,52 @@
+.font{
+    font-family: var(--font-primary);
+
+    &.one{
+        font-weight: 700;
+        font-size: 1.625rem;
+        line-height: 2.125rem;
+        color: var(--color-gray-600);
+    }
+
+    &.two{
+        font-weight: 700;
+        font-size: 1.375rem;
+        line-height: 1.5rem;
+        color: var(--color-gray-600);
+    }
+
+    &.three{
+        font-weight: 700;
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        color: var(--color-gray-600);
+    }
+
+    &.four{
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: var(--color-gray-300);
+    }
+
+    &.five{
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        color: var(--color-primary);
+    }
+
+    &.six{
+        font-weight: 600;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        color: var(--color-gray-300);
+    }
+
+    &.seven{
+        font-weight: 400;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        color: var(--color-gray-300);
+    }
+}
