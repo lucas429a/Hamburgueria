@@ -1,0 +1,129 @@
+"sales": [
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "ALPHA2              ",
+			"color": 418,
+			"total_sales_model": 12,
+			"total_value_model": 734.64
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "BIKER               ",
+			"color": 600,
+			"total_sales_model": 12,
+			"total_value_model": 636.72
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "ETERNITY            ",
+			"color": 421,
+			"total_sales_model": 24,
+			"total_value_model": 1273.44
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "ETERNITY            ",
+			"color": 500,
+			"total_sales_model": 24,
+			"total_value_model": 1273.44
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "FLY                 ",
+			"color": 501,
+			"total_sales_model": 12,
+			"total_value_model": 636.72
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "FLY                 ",
+			"color": 602,
+			"total_sales_model": 12,
+			"total_value_model": 636.72
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "FORUM2              ",
+			"color": 400,
+			"total_sales_model": 24,
+			"total_value_model": 1175.52
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "FORUM2              ",
+			"color": 601,
+			"total_sales_model": 24,
+			"total_value_model": 1175.52
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "GOLDEN2             ",
+			"color": 600,
+			"total_sales_model": 12,
+			"total_value_model": 489.72
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "GOLF2               ",
+			"color": 400,
+			"total_sales_model": 24,
+			"total_value_model": 979.44
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "GOLF2               ",
+			"color": 402,
+			"total_sales_model": 12,
+			"total_value_model": 489.72
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "INDY2               ",
+			"color": 400,
+			"total_sales_model": 48,
+			"total_value_model": 1958.88
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "INDY2               ",
+			"color": 402,
+			"total_sales_model": 48,
+			"total_value_model": 1958.88
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "KINGS               ",
+			"color": 500,
+			"total_sales_model": 12,
+			"total_value_model": 636.72
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "KINGS               ",
+			"color": 501,
+			"total_sales_model": 12,
+			"total_value_model": 636.72
+		},
+		{
+			"year": "2024",
+			"month": "2",
+			"model": "KINGS INF           ",
+			"color": 501,
+			"total_sales_model": 12,
+			"total_value_model": 587.76
+		},
