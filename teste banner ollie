@@ -127,3 +127,248 @@
 			"total_sales_model": 12,
 			"total_value_model": 587.76
 		},
+
+
+
+
+componente cards modelos 
+
+import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
+import { ISale, sales } from "./data/data";
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import styled from "styled-components";
+import { Height } from "@mui/icons-material";
+
+export const GoldCard = styled(Card)`
+    background: linear-gradient(135deg, #FFD700, #DAA400, #FFD700);
+    color: Black;
+`;
+
+export const SilverCard = styled(Card)`
+    background: linear-gradient(135deg, #C0C0C0, #A9A9A9, #C0C0C0);
+    color: Black;
+`;
+
+export const BronzeCard = styled(Card)`
+    background: linear-gradient(135deg, #CD7F32, #8B5A2B, #CD7F32);
+    color: Black;
+`;
+
+
+
+function getTopThreeModels(data: ISale[]) {
+        const modelSales = data.reduce((acc, sale) => {
+            acc[sale.model] = (acc[sale.model] || 0) + sale.total_sales_model;
+            return acc;
+        }, {} as { [key: string]: number });
+    
+        return Object.entries(modelSales)
+            .sort(([, a], [, b]) => b - a)
+            .slice(0, 3)
+            .map(([model, total_sales_model]) => ({ model, total_sales_model }));
+    }
+    
+
+
+    const topThreeModels = getTopThreeModels(sales);
+
+    const TopSellingModels = () => (
+        <Box height={'40rem'}>
+                <Stack  spacing={2} alignItems="center">
+                {topThreeModels.map((item, index) => {
+                    const CardComponent = index === 0 ? GoldCard : index === 1 ? SilverCard : BronzeCard;
+                    return (
+                        <CardComponent key={index} sx={{ width: 300 }}>
+                            <CardContent>
+                                <Stack direction="row" alignItems="center" spacing={1}>
+                                    <WorkspacePremiumIcon />
+                                    <Typography fontWeight={600} variant="body1">
+                                        {index + 1}º Modelo Mais Vendido
+                                    </Typography>
+                                </Stack>
+                                <Typography fontWeight={400} variant="body1">Modelo: {item.model.trim()}</Typography>
+                                <Typography fontWeight={400} variant="body1">Total de Vendas: {item.total_sales_model}</Typography>
+                            </CardContent>
+                        </CardComponent>
+                    );
+                })}
+                </Stack>
+        </Box>
+    );
+    
+    export default TopSellingModels;
+    
+
+
+
+
+
+
+
+
+
+
+component Card mes
+
+
+ import { Box, Card, CardContent, Typography, Stack } from "@mui/material";
+import { ISale, sales, salesMonth } from "./data/data";
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import { BronzeCard, GoldCard, SilverCard } from "./CardsDashClient";
+
+const monthNames = [
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho", 
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+  ];
+  
+  const getMonthName = (month: number): string => {
+    return monthNames[month - 1]; // De 1 a 12
+  };
+  
+  // Função para calcular a média de vendas
+  const getAverageSales = (sales: typeof salesMonth): number => {
+    const totalSales = sales.reduce((sum, sale) => sum + sale.total_value, 0);
+    return totalSales / sales.length;
+  };
+  
+  // Função para calcular a comparação das vendas com a média
+  const getSalesComparison = (salesAmount: number, average: number): number => {
+    return ((salesAmount - average) / average) * 100;
+  };
+  
+  // Função para pegar os 3 meses com maior número de vendas
+  const getTopThreeMonths = (sales: typeof salesMonth) => {
+    return [...sales]
+      .sort((a, b) => b.total_value - a.total_value) // Ordena do maior para o menor
+      .slice(0, 3); // Pega os 3 primeiros
+  };
+  
+  // Calculando a média e os 3 meses mais vendidos
+  const averageSales = getAverageSales(salesMonth);
+  const topThreeMonths = getTopThreeMonths(salesMonth);
+  
+  // Renderizando o componente
+  const SalesCards = () => (
+    <Box height={'40rem'} sx={{ padding: 2 }}>
+    {/* Título estilizado */}
+    <Typography variant="h6" fontWeight="bold" align="center" sx={{ marginBottom: 3 }}>
+      MAIORES RECEITAS MENSAIS
+    </Typography>
+
+    <Stack spacing={2} alignItems="center">
+      {topThreeMonths.map((item, index) => {
+        const percentageComparison = getSalesComparison(item.total_value, averageSales);
+        const CardComponent = index === 0 ? GoldCard : index === 1 ? SilverCard : BronzeCard;
+        const monthName = `${getMonthName(parseInt(item.month))} de ${item.year}`;
+
+        return (
+          <CardComponent key={index} sx={{ width: 300 }}>
+            <CardContent>
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <WorkspacePremiumIcon />
+                <Typography fontWeight={600} variant="body1">
+                  {index + 1}º Maior Receita por Mês
+                </Typography>
+              </Stack>
+              <Typography fontWeight={400} variant="body1">
+                Mês: {monthName}
+              </Typography>
+              <Typography fontWeight={400} variant="body1">
+                Estimativa Mensal : R${item.total_value.toFixed(2)}
+              </Typography>
+              <Typography variant="body2" fontWeight={700} color={percentageComparison > 0 ? "green" : "red"}>
+                {percentageComparison.toFixed(2)}% {percentageComparison > 0 ? "Acima" : "Abaixo"} da Média
+              </Typography>
+            </CardContent>
+          </CardComponent>
+        );
+      })}
+    </Stack>
+  </Box>
+  );
+  
+  export default SalesCards;
+
+
+
+
+
+tentativa inicial graficos vendas
+
+import { Box, Card, CardContent, Typography, Stack } from "@mui/material";
+import { ISale, sales, salesMonth } from "./data/data";
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import { BronzeCard, GoldCard, SilverCard } from "./CardsDashClient";
+
+const monthNames = [
+    "janeiro", "fevereiro", "março", "abril", "maio", "junho", 
+    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+  ];
+  
+  const getMonthName = (month: number): string => {
+    return monthNames[month - 1]; // De 1 a 12
+  };
+  
+  // Função para calcular a média de vendas
+  const getAverageSales = (sales: typeof salesMonth): number => {
+    const totalSales = sales.reduce((sum, sale) => sum + sale.total_value, 0);
+    return totalSales / sales.length;
+  };
+  
+  // Função para calcular a comparação das vendas com a média
+  const getSalesComparison = (salesAmount: number, average: number): number => {
+    return ((salesAmount - average) / average) * 100;
+  };
+  
+  // Função para pegar os 3 meses com maior número de vendas
+  const getTopThreeMonths = (sales: typeof salesMonth) => {
+    return [...sales]
+      .sort((a, b) => b.total_value - a.total_value) // Ordena do maior para o menor
+      .slice(0, 3); // Pega os 3 primeiros
+  };
+  
+  // Calculando a média e os 3 meses mais vendidos
+  const averageSales = getAverageSales(salesMonth);
+  const topThreeMonths = getTopThreeMonths(salesMonth);
+  
+  // Renderizando o componente
+  const SalesCards = () => (
+    <Box height={'40rem'} sx={{ padding: 2 }}>
+    {/* Título estilizado */}
+    <Typography variant="h6" fontWeight="bold" align="center" sx={{ marginBottom: 3 }}>
+      MAIORES RECEITAS MENSAIS
+    </Typography>
+
+    <Stack spacing={2} alignItems="center">
+      {topThreeMonths.map((item, index) => {
+        const percentageComparison = getSalesComparison(item.total_value, averageSales);
+        const CardComponent = index === 0 ? GoldCard : index === 1 ? SilverCard : BronzeCard;
+        const monthName = `${getMonthName(parseInt(item.month))} de ${item.year}`;
+
+        return (
+          <CardComponent key={index} sx={{ width: 300 }}>
+            <CardContent>
+              <Stack direction="row" alignItems="center" spacing={1}>
+                <WorkspacePremiumIcon />
+                <Typography fontWeight={600} variant="body1">
+                  {index + 1}º Maior Receita por Mês
+                </Typography>
+              </Stack>
+              <Typography fontWeight={400} variant="body1">
+                Mês: {monthName}
+              </Typography>
+              <Typography fontWeight={400} variant="body1">
+                Estimativa Mensal : R${item.total_value.toFixed(2)}
+              </Typography>
+              <Typography variant="body2" fontWeight={700} color={percentageComparison > 0 ? "green" : "red"}>
+                {percentageComparison.toFixed(2)}% {percentageComparison > 0 ? "Acima" : "Abaixo"} da Média
+              </Typography>
+            </CardContent>
+          </CardComponent>
+        );
+      })}
+    </Stack>
+  </Box>
+  );
+  
+  export default SalesCards;
