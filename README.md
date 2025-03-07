@@ -92,8 +92,4 @@ Os líderes do EJC (padres, organizadores) assumem um papel semelhante ao de fig
 💭 Minha visão: A experiência pode ser positiva para algumas pessoas, mas é importante que os jovens tenham consciência do que estão vivenciando, para que a decisão de continuar na fé seja realmente livre e racional. 🚨
 
 
-
-ARQUIVO TXT STUDIOZ 
-QTD;N PEDIDO;CODIGO MASTER;FORNECEDOR;COR;DESCRICAO;UC;GRADE;GRADE QTD;TOTAL;SEMANA;EMPRESA;VOLUME;ANO;PROMOCAO;DEPARTAMENTO;INICIO
-1;2300006702;5195343;22002202 META INDUSTRIA DE CALDOS LTDA;OFF WHITE;SAPATE MAS OLLIE TURIM 409;100000025262269;38  39  40  41  42  43;01  01  03  03  02  02;12;42;STZ-1075-CD;1/52;24;;MASCULINO;
-
+Oi Bianca, estava pensando e cheguei à conclusão de que, para mim, é melhor a gente não se reaproximar. O reencontro no bar foi bom, trouxe muitas memórias, algumas até que eu nem lembrava mais. Fico feliz por ver que cada um está conseguindo seguir em frente, mas pensando melhor, acho que é melhor para nós dois seguirmos nossos caminhos separados. Desejo tudo de bom para você e sua família, e boa sorte em tudo que vier pela frente.
